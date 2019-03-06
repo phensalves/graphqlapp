@@ -12,7 +12,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # end
   field :user, Types::UserType do
     argument :id, types.ID
-    argument :name, !types.String
+    argument :name, types.String
     description "User identify"
 
     resolve ->(obj, args, ctx) {
