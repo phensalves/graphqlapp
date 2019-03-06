@@ -24,4 +24,10 @@ Types::QueryType = GraphQL::ObjectType.define do
       User.all
     }
   end
+
+  field :allCountries, types[Types::CountryType] do
+    resolve ->(obj, args, ctx) {
+      Country.all
+    }
+  end
 end
